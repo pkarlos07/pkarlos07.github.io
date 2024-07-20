@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Game Survey</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="top">
+        <h1 id="title">Video Game Survey</h1>
+        <p id="description">What type of video games do you like? Let us know here!</p>
+    </div>
+    <form id="survey-form">
+        <label for="name" id="name-label">Name</label>
+        <input id="name" type="text" placeholder="eg. John Smith">
+        <label for="email" id="email-label">Email</label>
+        <input id="email" type="email" placeholder="eg. 123@abc.com">
+        <label for="number" id="number-label">On a scale from 1-10, how would you rate your video game knowledge?</label>
+        <input id="number" type="number" max="10" min="1" placeholder="0-10">
+        <label for="select" id="genre-label">What is your favorite video game genre?</label>
+        <select id="select">
+            <option value="">(select one)</option>
+            <option value="1">RPG</option>
+            <option value="2">Fighting</option>
+            <option value="3">Platformer</option>
+            <option value="4">Action</option>
+            <option value="5">Sandbox</option>
+            <option value="6">Sports</option>
+            <option value="7">Shooter</option>
+            <option value="8">Puzzle</option>
+            <option value="9">Rhythm</option>
+            <option value="10">Racing</option>
+            <option value="11">Strategy</option>
+            <option value="12">Survival</option>
+            <option value="13">MMO</option>
+            <option value="14">Other</option>
+        </select>
+        <label for="text">If Other, write and describe genre/subgenre here:</label>
+        <textarea id="text" placeholder="eg. Soulslike, popularized by the Dark Souls series"></textarea>
+        <label id="system-label" for="systemSelect">What systems do you own? (Select Multiple)</label> 
+        <div id="systemSelect">
+            <label for="xbox" class="systemLabel">Xbox Series (X/S)</label>
+            <input id="xbox" type="checkbox" class="system"></input>
+            <label for="ps5" class="systemLabel">Playstation 5</label>
+            <input id="ps5" type="checkbox" class="system"></input>
+            <label for="switch" class="systemLabel">Nintendo Switch</label>
+            <input id="switch" type="checkbox" class="system"></input>
+            <label for="pc" class="systemLabel">PC</label>
+            <input id="pc" type="checkbox" class="system"></input>
+        </div>
+        <label for="game" id="game-label">Regardless of genre or system, what is your favorite game?</label>
+        <input id="game" type="text" placeholder="eg. Super Mario Bros.">
+        <label for="multi">Do you prefer singleplayer or multiplayer games? (Select One)</label>
+        <div id="multiSelect">
+            <input id="single" type="radio" value="1" name="player" class="player">Sineplayer</input>
+            <input id="comp" type="radio" value="2" name="player" class="player">Multiplayer (Competetive)</input>
+            <input id="coop" type="radio" value="3" name="player" class="player">Multiplayer (Cooperative)</input>
+        </div>
+        <button type="submit" id="submit">Submit</button>
+    </section>
+</body>
+</html>
