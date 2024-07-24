@@ -1,0 +1,30 @@
+body {
+    font-family: 'Roboto';
+}
+#sectionOne {
+    background-color: #1F2937;
+    margin-top: -10px;
+    margin-left: -10px;
+    margin-right: -10px;
+}
+#headerOneText, .headerLink {
+    display: inline-block;
+}
+#headerOneText {
+    font-size: 24px;
+    color: #F9FaF8;
+    margin-left: 48px;
+}
+.headerLink {
+    float: right;
+    font-size: 18px;
+    color: #e5E7EB;
+    margin-top: 28px;
+    cursor: pointer;
+    margin-right: 48px;
+}
+#heroText {
+    font-size: 48px;
+    font-weight: 800;
+    color: #F9FAF8;
+}
