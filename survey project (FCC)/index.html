@@ -40,22 +40,21 @@
         <textarea id="text" placeholder="eg. Soulslike, popularized by the Dark Souls series"></textarea>
         <label id="system-label" for="systemSelect">What systems do you own? (Select Multiple)</label> 
         <div id="systemSelect">
-            <label for="xbox" class="systemLabel">Xbox Series (X/S)</label>
-            <input id="xbox" type="checkbox" class="system"></input>
-            <label for="ps5" class="systemLabel">Playstation 5</label>
-            <input id="ps5" type="checkbox" class="system"></input>
-            <label for="switch" class="systemLabel">Nintendo Switch</label>
-            <input id="switch" type="checkbox" class="system"></input>
-            <label for="pc" class="systemLabel">PC</label>
-            <input id="pc" type="checkbox" class="system"></input>
+            <input id="xbox" type="checkbox" class="system"><label for="xbox" class="systemLabel" id="xboxLabel">Xbox Series (X/S)</label></input>        
+            <input id="ps5" type="checkbox" class="system"><label for="ps5" class="systemLabel" id="ps5Label">Playstation 5</label></input>
+            <input id="switch" type="checkbox" class="system"><label for="switch" class="systemLabel" id="switchLabel">Nintendo Switch</label></input>
+            <input id="pc" type="checkbox" class="system"><label for="pc" class="systemLabel" id="pcLabel">PC</label></input>
         </div>
         <label for="game" id="game-label">Regardless of genre or system, what is your favorite game?</label>
         <input id="game" type="text" placeholder="eg. Super Mario Bros.">
         <label for="multi">Do you prefer singleplayer or multiplayer games? (Select One)</label>
-        <div id="multiSelect">
-            <input id="single" type="radio" value="1" name="player" class="player">Sineplayer</input>
-            <input id="comp" type="radio" value="2" name="player" class="player">Multiplayer (Competetive)</input>
-            <input id="coop" type="radio" value="3" name="player" class="player">Multiplayer (Cooperative)</input>
+        <div id="playerSelect">
+            <input id="single" type="radio" value="1" name="player" class="player"></input>
+            <input id="comp" type="radio" value="2" name="player" class="player"></input>
+            <input id="coop" type="radio" value="3" name="player" class="player"></input>
+            <label for="single" class="playerLabel">Singleplayer</label>
+            <label for="comp" class="playerLabel">Multiplayer (Competetive)</label>
+            <label for="coop" class="playerLabel">Multiplayer (Cooperative)</label>
         </div>
         <button type="submit" id="submit">Submit</button>
     </section>

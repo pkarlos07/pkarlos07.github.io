@@ -2,7 +2,7 @@ body {
     background-color: rgb(177, 207, 237);
 }
 form {
-    background: rgb(177, 207, 237);
+    background: rgb(197, 217, 237);
     margin-top: 30px;
     max-width: 1200px;
     min-width: 700px;
@@ -10,6 +10,7 @@ form {
     border-radius: 5px;
     margin-left: auto;
     margin-right: auto;
+    position: relative;
 }
 h1 {
     font-family:'Times New Roman', Times, serif;
@@ -73,8 +74,13 @@ textarea {
     display: flex;
     justify-content: space-between;
 }
+#systemSelect {
+    display: flex;
+    justify-content: space-between;
+}
 .system {
     width: 25%;
+    opacity: 0%;
 }
 .player {
     width: 33.33%;
@@ -85,4 +91,46 @@ textarea {
 .systemLabel {
     font-size: 15px;
     color: black;
+    text-align: center;
+    margin-top: 8px;
+    width: 25%;
+    height: 50px;
+    margin-left: -25%;
+}
+.systemLabel:hover {
+    background-color: rgb(178, 216, 236);
+    border: solid;
+    border-radius: 2px;
+    border-color: white;
+}
+#xbox:checked + #xboxLabel{
+    background-color: green;
+    color: white;
+    border: solid black;
+}
+#ps5:checked + #ps5Label{
+    background-color: blue;
+    color: white;
+    border: solid black;
+}
+#switch:checked + #switchLabel{
+    background-color: red;
+    color: white;
+    border: solid black;
+}
+#pc:checked + #pcLabel{
+    background-color: orange;
+    color: white;
+    border: solid black;
+}
+#playerSelect {
+    display: grid;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.playerLabel {
+    font-size: 15px;
+    color: black;
+    text-align: center;
+    margin-top: 8px;
 }
