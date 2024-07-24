@@ -1,6 +1,10 @@
 body {
     font-family: 'Roboto';
 }
+section {
+    padding-left: 15%;
+    padding-right: 15%;
+}
 #sectionOne {
     background-color: #1F2937;
     margin-top: -10px;
@@ -9,11 +13,11 @@ body {
 }
 #headerOneText, .headerLink {
     display: inline-block;
+    margin-bottom: 150px;
 }
 #headerOneText {
     font-size: 24px;
     color: #F9FaF8;
-    margin-left: 48px;
 }
 .headerLink {
     float: right;
@@ -21,10 +25,30 @@ body {
     color: #e5E7EB;
     margin-top: 28px;
     cursor: pointer;
-    margin-right: 48px;
+    margin-left: 20px;
 }
 #heroText {
     font-size: 48px;
-    font-weight: 800;
+    font-weight: 1000;
     color: #F9FAF8;
+    width: 350px;
+}
+#hero {
+    display: flex;
+    justify-content: center;
+}
+#heroLeft, #heroRight {
+    flex: 1;
+    margin-bottom: 150px;
+}
+#heroImage {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: 300px;
+}
+#heroSecondary {
+    font-size: 18px;
+    color: #E5E7EB;
 }
