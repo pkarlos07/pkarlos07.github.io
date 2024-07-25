@@ -1,0 +1,37 @@
+body {
+   font-family: arial;
+   padding: 50px;
+}
+#content {
+    margin: auto;
+    max-width: 1000px;
+}
+header {
+    height: 200px;
+    margin-top: -50px;
+    margin-bottom: -50px;
+}
+h1 {
+    font-size: 4em;
+    margin-bottom: 0px;
+}
+#list {
+    height: 550px;
+    text-align: center;
+}
+ul {
+    list-style-type: "";
+}
+li {
+    margin: 20px;
+}
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: -50px;
+}
+#readme {
+    margin-bottom: -10px;
+}
