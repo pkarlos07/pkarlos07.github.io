@@ -65,6 +65,7 @@ button {
     width: 150px;
     border-radius: 15px;
     border: 3px solid #3882F6;
+    margin-bottom: 5px;
 }
 #headerTwoText {
     font-size: 36px;
@@ -116,7 +117,7 @@ button {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 10px;
+    padding: 20px;
 }
 #ctaHead {
     font-size: 22px;
