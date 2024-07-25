@@ -4,19 +4,21 @@ body {
 }
 #content {
     margin: auto;
-    max-width: 1000px;
+    max-width: 1100px;
+    box-shadow: 0px 0px 20px black;
+    padding: 30px;
 }
 header {
-    height: 200px;
+    height: 140px;
     margin-top: -50px;
-    margin-bottom: -50px;
+    margin-bottom: 30px;
+    border-bottom: solid gray;
 }
 h1 {
     font-size: 4em;
     margin-bottom: 0px;
 }
 #list {
-    height: 550px;
     text-align: center;
 }
 ul {
@@ -31,7 +33,10 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: -50px;
+    position: absolute; 
+    bottom: 0; 
+    left: 0; 
+    right: 0;
 }
 #readme {
     margin-bottom: -10px;
