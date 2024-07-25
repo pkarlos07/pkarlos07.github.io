@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page</title>
     <link rel="stylesheet" href="styles.css">
-    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
     <section id="sectionOne">
@@ -18,7 +20,7 @@
         <div id="hero">
             <div id="heroLeft">
                 <h1 id="heroText">This website is awesome</h1>
-                <p id="heroSecondary">This website has some subtext that goes here under the main title. It's a smaller font an the color is lower contrast</p>
+                <p id="heroSecondary">This website has some subtext that goes here under the main title. It's a smaller font and the color is lower contrast</p>
                 <button id="heroButton">Sign up</button>
             </div>
             <div id="heroRight">
@@ -32,9 +34,38 @@
         </header>
         <div id="informationBoxes">
             <div class="informationBox">
-                <img id="imageOne" src="../src/landscape-placeholder.svg" alt="this is a placeholder for an image">
+                <img id="imageOne" class="images" src="../src/landscape-placeholder.svg" alt="this is a placeholder for an image">
+                <sub>this is some subtext under and illustration or image</sub>
+            </div>
+            <div class="informationBox">
+                <img id="imageTwo" class="images" src="../src/landscape-placeholder.svg" alt="this is a placeholder for an image">
+                <sub>this is some subtext under and illustration or image</sub>
+            </div>
+            <div class="informationBox">
+                <img id="imageThree" class="images" src="../src/landscape-placeholder.svg" alt="this is a placeholder for an image">
+                <sub>this is some subtext under and illustration or image</sub>
+            </div>
+            <div class="informationBox">
+                <img id="imageFour" class="images" src="../src/landscape-placeholder.svg" alt="this is a placeholder for an image">
+                <sub>this is some subtext under and illustration or image</sub>
             </div>
         </div>
     </section>
+    <section id="sectionThree">
+        <p id="quote">This is an inspiring quote, or testimonial from a customer. Maybe it's just filling up space, or maybe people will actually read it. Who knows? All I know is that it looks nice.</p>
+        <sub id="quoteName">-Thor, God of Thunder</sub>
+    </section>
+    <section id="sectionFour">
+        <div id="callToAction">
+            <div id="ctaLeft">
+                <p id="ctaHead">Call to action! It's time!</p>
+                <sub id="ctaSub">Sign up for out product by clicking that button right over there!</sub>
+            </div>
+            <button id="ctaButton">Sign up</button>
+        </div>
+    </section>
+    <footer>
+        <p id="copyright">Copyright &copy Peter Karlos 2024</p>
+    </footer>
 </body>
 </html>
