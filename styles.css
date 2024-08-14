@@ -41,3 +41,11 @@ footer {
 #readme {
     margin-bottom: -10px;
 }
+@media (max-width: 450px) {
+    h1 {
+        font-size: 3em;
+    }
+    body {
+        padding: 20px;
+    }
+}
