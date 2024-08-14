@@ -48,4 +48,8 @@ footer {
     body {
         padding: 20px;
     }
+    li {
+        margin: 20px;
+        margin-bottom: 40px;
+    }
 }
