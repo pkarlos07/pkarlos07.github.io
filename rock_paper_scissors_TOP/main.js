@@ -26,7 +26,7 @@ buttons.forEach(button => {
         if (computerScore >= 5) {
             humanScore = 0;
             computerScore = 0;
-            announcer.textContent = "You! Choose a hand to play again:"
+            announcer.textContent = "You Lose! Choose a hand to play again:"
         }
     })
 })
