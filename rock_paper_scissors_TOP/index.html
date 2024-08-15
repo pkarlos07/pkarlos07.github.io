@@ -6,18 +6,25 @@
     <title>Document</title>
 </head>
 <body>
-    <!-- Return button to go back to home page -->
-    <a href="../index.html"><button id="return">Home Page</button></a>
+    <div id="board">
+        <h1 id="title">Rock Paper Scissors Game</h1>
+        <h3 id="score">Player: 0, Computer: 0</h3>
+        <p id="announcer">Select a hand:</p>
+    </div>
+    <div id="buttons">
+        <button id="rock">Rock</button>
+        <button id="paper">Paper</button>
+        <button id="scissors">Scissors</button>
+    </div>
     <style>
-        #return {
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 100px;
-            height: 50px;
+        button {
+            width: 150px;;
+            height: 150px;
+        }
+        body {
+            text-align: center;
         }
     </style>
-    <!--  -->
     <script src="main.js"></script>
 </body>
 </html>
