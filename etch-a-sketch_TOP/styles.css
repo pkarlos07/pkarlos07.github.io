@@ -105,7 +105,6 @@ button {
     #inputSelection, #sizeSelection {
         justify-content: flex-start;
         width: 40vw;
-        border: solid;
     }
     #easel {
         width: 90vw;
