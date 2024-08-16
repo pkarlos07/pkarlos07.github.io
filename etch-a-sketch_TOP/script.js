@@ -128,10 +128,7 @@ function createEasel() {
     easel.addEventListener("touchstart", function(e) {
         e.preventDefault(); 
         if (e.target.classList.contains("box")) {
-            mouseDown = true;
-            if (drag) {
-                boxColor(e);
-            }
+            boxColor(e);
         }
     });
 
@@ -140,14 +137,8 @@ function createEasel() {
         const touch = e.touches[0];
         const target = document.elementFromPoint(touch.clientX, touch.clientY);
         if (target && target.classList.contains("box")) {
-            if (mouseDown && drag || hover) {
-                boxColor({ target: target });
-            }
+            boxColor({ target: target });
         }
-    });
-
-    document.addEventListener("touchend", function() {
-        mouseDown = false;
     });
 }
 
