@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etch-a-Sketch</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div id="inputSelection">
+            <button id="hover">Hover</button>
+            <button id="drag">Click/Drag</button>
+            <button id="mode">Normal Mode</button>
+            <button id="clear">Clear</button>
+        </div>
+        <h1 id="title">Etch-a-Sketch</h1>
+        <div id="sizeSelection">
+            <label for="grid">Grid Size:</label>
+            <div id="grid">
+                <input id="width" type="number" min="4" max="100" value="16">
+                <p id="x">x</p>
+                <input id="height" type="number" min="4" max="100" value="16">
+            </div>
+            <input type="range" min="4" max="100" value="16" id="slider">
+        </div>
+    </header>
+    <section id="easel"></section>
+    <script src="script.js"></script>
+</body>
+</html>
