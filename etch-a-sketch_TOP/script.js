@@ -21,7 +21,7 @@ createEasel();
 hoverButton.style = "background-color: gray"
 let mouseDown = false;
 mode = 0;
-rgb = ["9400D3", "#4B0082", "#0000FF", "#00FF00", "#FFFF00", "#FF7F00", "#FF0000"]
+rgb = ["red", "orange", "yellow", "green", "cyan", "blue", "purple"]
 
 //Input type buttons
 hoverButton.addEventListener("mousedown", function() {
@@ -91,7 +91,7 @@ function createEasel() {
     for (i = 0; i < w; i++) {
         for (j = 0; j < h; j++) {
             const box = document.createElement("div");
-            box.classList.add("box")
+            box.classList.add("box");
             easel.appendChild(box);
         }
     }
@@ -99,7 +99,7 @@ function createEasel() {
     const boxes = document.querySelectorAll(".box");
     boxes.forEach(e => {
         e.style.width = `calc(100% / ${w})`;
-        e.style.height = `calc(100vw / ${w} / 3)`;
+        e.style.height = `calc(100% / ${w})`;
     });
 
      // Event listeners for drawing
@@ -108,7 +108,7 @@ function createEasel() {
         if (e.target.classList.contains("box")) {
             mouseDown = true;
             if (drag) {
-                e.target.classList.add("clicked");
+                boxColor(e);
             }
         }
     });
@@ -116,7 +116,7 @@ function createEasel() {
     easel.addEventListener("mouseover", function(e) {
         if (e.target.classList.contains("box")) {
             if (mouseDown && drag || hover) {
-                e.target.classList.add("clicked");
+                boxColor(e);
             }
         }
     });
@@ -130,4 +130,29 @@ function createEasel() {
 function eraseEasel() {
     easel.innerHTML = '';
     createEasel();
+}
+
+function boxColor(e) {
+    if (mode === 1) {
+        let color = rgb[Math.floor(Math.random() * rgb.length)]
+        e.target.style.background = color;
+    }
+    else if (mode === -1) {
+        console.log(e.target.style.opacity);
+        if (e.target.style.opacity === "") {
+            e.target.style.background = "black";
+            e.target.style.opacity = "0.1";
+        }
+        else {
+            let opacity = parseFloat(e.target.style.opacity);
+            if (opacity < 1) {
+                opacity += 0.1;
+                e.target.style.opacity = opacity;
+            }
+        }
+    }
+    else {
+        e.target.style.background = "black";
+        
+    }
 }
