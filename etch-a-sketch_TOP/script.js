@@ -90,20 +90,19 @@ function createEasel() {
     easel.innerHTML = '';
     for (i = 0; i < w; i++) {
         for (j = 0; j < h; j++) {
-            const box = document.createElement("div");
+            const box = document.createElement("div")
             box.classList.add("box");
+            box.style.width = `calc(100% / ${w})`;
+            box.style.height = `calc(100% / ${w})`;
             easel.appendChild(box);
         }
     }
-    //Sizes boxes appropriately
-    const boxes = document.querySelectorAll(".box");
-    boxes.forEach(e => {
-        e.style.width = `calc(100% / ${w})`;
-        e.style.height = `calc(100% / ${w})`;
-    });
 
-     // Event listeners for drawing
-     easel.addEventListener("mousedown", function(e) {
+    
+    console.log(easel.getAttribute("width"));
+
+     // Mouse event listeners for drawing
+    easel.addEventListener("mousedown", function(e) {
         e.preventDefault(); 
         if (e.target.classList.contains("box")) {
             mouseDown = true;
@@ -122,6 +121,32 @@ function createEasel() {
     });
 
     document.addEventListener("mouseup", function() {
+        mouseDown = false;
+    });
+
+    // Touch Event listeners for drawing
+    easel.addEventListener("touchstart", function(e) {
+        e.preventDefault(); 
+        if (e.target.classList.contains("box")) {
+            mouseDown = true;
+            if (drag) {
+                boxColor(e);
+            }
+        }
+    });
+
+    easel.addEventListener("touchmove", function(e) {
+        e.preventDefault();
+        const touch = e.touches[0];
+        const target = document.elementFromPoint(touch.clientX, touch.clientY);
+        if (target && target.classList.contains("box")) {
+            if (mouseDown && drag || hover) {
+                boxColor({ target: target });
+            }
+        }
+    });
+
+    document.addEventListener("touchend", function() {
         mouseDown = false;
     });
 }
