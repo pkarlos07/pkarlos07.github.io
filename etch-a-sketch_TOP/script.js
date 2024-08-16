@@ -80,7 +80,7 @@ modeButton.addEventListener("mousedown", function() {
     }
     if (mode === 2) {
         modeButton.style = "background-color: gray";
-        modeButton.textContent = "Shade Mode"
+        modeButton.textContent = "Eraser Mode"
         mode = -1;
     }
 })
@@ -163,18 +163,7 @@ function boxColor(e) {
         e.target.style.background = color;
     }
     else if (mode === -1) {
-        console.log(e.target.style.opacity);
-        if (e.target.style.opacity === "") {
-            e.target.style.background = "black";
-            e.target.style.opacity = "0.1";
-        }
-        else {
-            let opacity = parseFloat(e.target.style.opacity);
-            if (opacity < 1) {
-                opacity += 0.1;
-                e.target.style.opacity = opacity;
-            }
-        }
+        e.target.style.background = "";
     }
     else {
         e.target.style.background = "black";
