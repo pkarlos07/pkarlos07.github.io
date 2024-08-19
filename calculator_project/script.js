@@ -127,7 +127,7 @@ function clearOpButtonStyle() {
 }
 
 function handleNegative() {
-    if (op === "" || parseFloat(result) === Math.abs(parseFloat(num1))) {
+    if (op === "" || Math.abs(parseFloat(result)) === Math.abs(parseFloat(num1))) {
         if (num1.includes("-"))
             num1 = num1.replace("-", "");
         else
