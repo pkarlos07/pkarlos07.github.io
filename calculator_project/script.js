@@ -2,6 +2,7 @@ let num1 = "";
 let num2 = "";
 let op = "";
 let temp;
+let oldOp;
 
 const numButtons = document.querySelectorAll(".number");
 const opButtons = document.querySelectorAll(".operator");
@@ -70,7 +71,7 @@ function addVariables(str) {
         handleError();
         return;
     }
-    if (op === "") {
+    if (op === "" || oldOp === op) {
         num1 += str;
         text.textContent = num1;
     }
@@ -78,15 +79,15 @@ function addVariables(str) {
         num2 += str;
         text.textContent = num2;
     }
-    if (text.textContent.length >= 10)
+    if (text.textContent.length >= 8)
         handleError(true);
+    let oldOp = op;
 }
 
 function addOperator(str, e) {
     if (num1 === "")
         handleError()
     else {
-        op = str;
         clearOpButtonStyle();
         e.target.classList.add("clicked");
     }
