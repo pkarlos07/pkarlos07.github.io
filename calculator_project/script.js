@@ -46,8 +46,11 @@ function calculate(x, y, z) {
         result = x - y;
     else if (z === "*")
         result = x * y;
-    else if (z === "/")
+    else if (z === "/") {
+        if (y === 0)
+            handleError();
         result = x / y;
+    }
     else if (op === "" && num === "")
         result = num1;
     else
