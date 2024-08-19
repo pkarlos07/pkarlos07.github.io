@@ -64,6 +64,7 @@ button:active {
 }
 #percent, #clear, #negative {
     background: gray;
+    color: black;
 }
 .operator, #equals {
     background: #ff9c33;
