@@ -2,7 +2,6 @@ let num1 = "";
 let num2 = "";
 let op = "";
 let temp;
-let oldOp;
 
 const numButtons = document.querySelectorAll(".number");
 const opButtons = document.querySelectorAll(".operator");
@@ -19,7 +18,7 @@ numButtons.forEach(numButton => {
 });
 opButtons.forEach(opButton => {
     opButton.addEventListener("click", function(e) {
-        addOperator(opButton.id, e);}
+        addOperator(e);}
     );
 });
 equalsButton.addEventListener("click", function() {
@@ -67,11 +66,7 @@ function calculate(x, y, z) {
 function addVariables(str) {
     if (str === "zero")
         str = "0";
-    if (str === "." && text.textContent.includes(".")) {
-        handleError();
-        return;
-    }
-    if (op === "" || oldOp === op) {
+    if (op === "" && oldOp === op) {
         num1 += str;
         text.textContent = num1;
     }
@@ -81,15 +76,17 @@ function addVariables(str) {
     }
     if (text.textContent.length >= 8)
         handleError(true);
-    let oldOp = op;
 }
 
-function addOperator(str, e) {
+function addOperator(e) {
     if (num1 === "")
-        handleError()
+        handleError();
     else {
         clearOpButtonStyle();
         e.target.classList.add("clicked");
+        if (num1 !== "" && num2 !== "" && op !== "")
+            calculate(parseFloat(num1), parseFloat(num2), op);
+        op = e.target.id;
     }
 }
 
