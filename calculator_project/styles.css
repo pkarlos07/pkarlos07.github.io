@@ -2,10 +2,11 @@ body {
     padding: 0px;
     font-family: "Plus Jakarta Sans", sans-serif;
     background: black;
+    overflow: hidden;
 }
 #calculator {
     max-width: 550px;
-    min-width: 350px;
+    min-width: 320px;
     border: 5px solid;
     margin: auto;
     border-radius: 50px;
