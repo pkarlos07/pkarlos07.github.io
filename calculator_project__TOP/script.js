@@ -78,6 +78,8 @@ function addVariables(str) {
         num2 += str;
         text.textContent = num2;
     }
+    if (text.textContent.length >= 10)
+        handleError(true);
 }
 
 function addOperator(str, e) {
