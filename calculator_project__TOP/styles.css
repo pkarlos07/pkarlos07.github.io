@@ -47,18 +47,18 @@ button {
 button:active {
     opacity: 80%;
 }
-#meee {
+#zero {
     width: 46%;
-    aspect-ratio : 3 / 1;
+    aspect-ratio : 2 / 1;
 }
 .clicked {
-    background-color: gray;
+    opacity: 60%;
 }
-.number, #negative {
+.number {
     background: #2b2b2b;
     color: white;
 }
-#meee, #clear {
+#percent, #clear, #negative {
     background: gray;
 }
 .operator, #equals {

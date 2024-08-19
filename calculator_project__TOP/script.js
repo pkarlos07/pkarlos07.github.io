@@ -9,7 +9,7 @@ const equalsButton = document.querySelector("#equals");
 const clearButton = document.querySelector("#clear");
 const text = document.querySelector("#text");
 const negativeButton = document.querySelector("#negative")
-const meeeButton = document.querySelector("#meee");
+const percentButton = document.querySelector("#percent");
 
 numButtons.forEach(numButton => {
     numButton.addEventListener("click", function() {
@@ -30,9 +30,9 @@ clearButton.addEventListener("click", function() {
 negativeButton.addEventListener("click", function() {
     handleNegative();
 });
-meeeButton.addEventListener("click", function() {
-    text.textContent = "© 2024";
-})
+percentButton.addEventListener("click", function() {
+    percent();
+});
 
 function calculate(x, y, z) {
     let result = 0;
@@ -52,16 +52,20 @@ function calculate(x, y, z) {
         result = num1;
     else
         handleError();
-    if (result.toString().length >= 7)
-        text.textContent = result.toString().substring(0, 8);
+    if (result.toString().length >= 10)
+        text.textContent = result.toString().substring(0, 10);
     else
         text.textContent = result;
     num1 = result;
     temp = num2;
     num2 = "";
+    if (parseFloat(result) > 999999999999)
+        handleError(true);
 }
 
 function addVariables(str) {
+    if (str === "zero")
+        str = "0";
     if (str === "." && text.textContent.includes(".")) {
         handleError();
         return;
@@ -94,9 +98,11 @@ function clear() {
     clearOpButtonStyle();
 }
 
-function handleError() {
+function handleError(x) {
     clear();
     text.textContent = "Error";
+    if (x)
+        text.textContent = "Overflow"
 }
 
 function clearOpButtonStyle() {
@@ -130,5 +136,16 @@ function handleNegative() {
         }
         else
             handleError();
+    }
+}
+
+function percent() {
+    if (num2 !== "") {
+        num2 = "" + (parseFloat(num2) * 0.01);
+        text.textContent = num2;
+    }
+    else if (num1 !== "") {
+        num1 = "" + (parseFloat(num1) * 0.01);
+        text.textContent = num1;
     }
 }
