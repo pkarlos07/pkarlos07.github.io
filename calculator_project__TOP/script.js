@@ -9,6 +9,7 @@ const equalsButton = document.querySelector("#equals");
 const clearButton = document.querySelector("#clear");
 const text = document.querySelector("#text");
 const negativeButton = document.querySelector("#negative")
+const meeeButton = document.querySelector("#meee");
 
 numButtons.forEach(numButton => {
     numButton.addEventListener("click", function() {
@@ -29,6 +30,9 @@ clearButton.addEventListener("click", function() {
 negativeButton.addEventListener("click", function() {
     handleNegative();
 });
+meeeButton.addEventListener("click", function() {
+    text.textContent = "© 2024";
+})
 
 function calculate(x, y, z) {
     let result = 0;
@@ -44,22 +48,24 @@ function calculate(x, y, z) {
         result = x * y;
     else if (z === "/")
         result = x / y;
+    else if (op === "" && num === "")
+        result = num1;
     else
         handleError();
-    if (text.textContent === "Error")
-        text.textContent = "";
-    else {
-        if (result.toString().length >= 7)
-            text.textContent = result.toString().substring(0, 8);
-        else
-            text.textContent = result;
-        num1 = result;
-        temp = num2;
-        num2 = "";
-    }
+    if (result.toString().length >= 7)
+        text.textContent = result.toString().substring(0, 8);
+    else
+        text.textContent = result;
+    num1 = result;
+    temp = num2;
+    num2 = "";
 }
 
 function addVariables(str) {
+    if (str === "." && text.textContent.includes(".")) {
+        handleError();
+        return;
+    }
     if (op === "") {
         num1 += str;
         text.textContent = num1;
@@ -84,7 +90,7 @@ function clear() {
     num1 = "";
     num2 = "";
     op = "";
-    text.textContent = "";
+    text.textContent = "0";
     clearOpButtonStyle();
 }
 

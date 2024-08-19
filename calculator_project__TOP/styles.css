@@ -42,6 +42,9 @@ button {
     margin-bottom: 1%;
     aspect-ratio : 1 / 1;
 }
+button:active {
+    opacity: 80%;
+}
 #meee {
     width: 46%;
     aspect-ratio : 3 / 1;
