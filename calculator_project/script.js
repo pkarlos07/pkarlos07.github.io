@@ -66,7 +66,7 @@ function calculate(x, y, z) {
 function addVariables(str) {
     if (str === "zero")
         str = "0";
-    if (op === "" && oldOp === op) {
+    if (op === "") {
         num1 += str;
         text.textContent = num1;
     }
