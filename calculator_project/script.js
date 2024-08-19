@@ -2,6 +2,8 @@ let num1 = "";
 let num2 = "";
 let op = "";
 let temp;
+let maxInt = 99999999;
+let maxFloatDigits = 8;
 
 const numButtons = document.querySelectorAll(".number");
 const opButtons = document.querySelectorAll(".operator");
@@ -47,28 +49,32 @@ function calculate(x, y, z) {
     else if (z === "*")
         result = x * y;
     else if (z === "/") {
-        if (y === 0)
+        if (num2 === "0") {
             handleError();
+            return;
+        }
         result = x / y;
     }
     else if (op === "" && num === "")
         result = num1;
     else
         handleError();
-    if (result.toString().length >= 8)
-        text.textContent = result.toString().substring(0, 8);
+    if (result.toString().length >= maxFloatDigits)
+        text.textContent = result.toString().substring(0, maxFloatDigits);
     else
         text.textContent = result;
     num1 = result;
     temp = num2;
     num2 = "";
-    if (parseFloat(result) > 999999999999)
+    if (parseFloat(result) > maxInt)
         handleError(true);
 }
 
 function addVariables(str) {
     if (str === "zero")
         str = "0";
+    if (text.textContent === "0" && str === "0")
+        return;
     if (op === "") {
         num1 += str;
         text.textContent = num1;
@@ -105,7 +111,7 @@ function handleError(x) {
     clear();
     text.textContent = "Error";
     if (x)
-        text.textContent = "Overflow"
+        text.textContent = "Overflow";
 }
 
 function clearOpButtonStyle() {
@@ -152,3 +158,50 @@ function percent() {
         text.textContent = num1;
     }
 }
+
+//Colors bc GF wanted them
+const body = document.querySelector("body");
+const calculator = document.querySelector("#calculator");
+const backgroundColor = document.querySelector("#backgroundColor");
+const numColor = document.querySelector("#numColor");
+const opColor = document.querySelector("#opColor");
+const altColor = document.querySelector("#altColor");
+const textColor = document.querySelector("#textColor");
+const labels = document.querySelectorAll("labels");
+
+backgroundColor.addEventListener("input", function(e) {
+    body.style.background = e.target.value;
+});
+numColor.addEventListener("input", function(e) {
+    numButtons.forEach(button => {
+        button.style.background = e.target.value;
+    })
+});
+opColor.addEventListener("input", function(e) {
+    opButtons.forEach(button => {
+        button.style.background = e.target.value;
+    })
+    equalsButton.style.background = e.target.value;
+});
+altColor.addEventListener("input", function(e) {
+    clearButton.style.background = e.target.value;
+    negativeButton.style.background = e.target.value;
+    percentButton.style.background = e.target.value;
+});
+textColor.addEventListener("input", function(e) {
+    calculator.style.border = "solid 5px " + e.target.value;
+    text.style.color = e.target.value;
+    clearButton.style.color = e.target.value;
+    negativeButton.style.color = e.target.value;
+    percentButton.style.color = e.target.value;
+    numButtons.forEach(button => {
+        button.style.color = e.target.value;
+    })
+    opButtons.forEach(button => {
+        button.style.color = e.target.value;
+    })
+    equalsButton.style.color = e.target.value;
+    labels.forEach(label => {
+        label.style.color = e.target.value;
+    })
+});

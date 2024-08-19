@@ -2,7 +2,6 @@ body {
     padding: 0px;
     font-family: "Plus Jakarta Sans", sans-serif;
     background: black;
-    overflow: hidden;
 }
 #calculator {
     max-width: 550px;
@@ -10,23 +9,24 @@ body {
     border: 5px solid;
     margin: auto;
     border-radius: 50px;
-    border: solid white 5px;
+    border: solid 5px;
+    border-color: white;
     padding: 20px;
 }
 h1 {
-    font-size: 500%;
+    font-size: 5vw;
     font-weight: 300;
     color: white;
-    margin-right: 4%;
     margin-left: auto;
+    cursor: default;
 }
 #screen {
     display: flex;
     height: 100px;
     padding: 10px;
     align-items: center;
-    border-bottom: 2px solid;
     text-align: right;
+    margin-bottom: 30px;
 }
 #console {
     padding: 10px;
@@ -34,6 +34,9 @@ h1 {
     flex-wrap: wrap;
     justify-content: center;
     gap: 1%;
+    user-select: none;
+    margin: -30px;
+    margin-bottom: -20px;
 }
 button {
     font-family: "Plus Jakarta Sans", sans-serif;
@@ -44,6 +47,7 @@ button {
     border: none;
     margin-bottom: 1%;
     aspect-ratio : 1 / 1;
+    cursor: pointer;
 }
 .clicked {
     opacity: 60%;
@@ -63,15 +67,44 @@ button:active {
     color: white;
 }
 #percent, #clear, #negative {
-    background: gray;
+    background: #808080;
     color: black;
 }
 .operator, #equals {
     background: #ff9c33;
     color: white;
 }
+#palette {
+    display: flex;
+    margin: auto;
+    margin-top: 20px;
+    justify-content: center;
+    color: white;
+    font-size: small;
+    max-width: 550px;
+    min-width: 320px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+input {
+    width: 80px;
+    height: 80px;
+    margin: 10px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    background: none;
+    cursor: pointer;
+    border: none;
+}
 @media (max-width: 550px) {
     button {
         font-size: 100%;
+    }
+    input {
+        width: 12vw;
+        height: 12vw;
+    }
+    h1 {
+        font-size: 400%;
     }
 }

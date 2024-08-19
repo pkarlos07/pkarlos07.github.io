@@ -10,14 +10,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div id="palette">
+        <input type="color" id="backgroundColor" value="#000000">
+        <input type="color" id="numColor" value="#2b2b2b">
+        <input type="color" id="opColor" value="#ff9c33">
+        <input type="color" id="altColor" value="#808080">
+        <input type="color" id="textColor" value="#FFFFFF">
+    </div>
     <div id="calculator">
         <div id="screen">
             <h1 id="text">0</h1>
         </div>
         <div id="console">
-            <button id="clear">AC</button>
-            <button id="negative">+/-</button>
-            <button id="percent">%</button>
+            <button id="clear" class="alt">AC</button>
+            <button id="negative" class="alt">+/-</button>
+            <button id="percent" class="alt">%</button>
             <button id="/" class="operator">÷</button>
             <button id="7" class="number">7</button>
             <button id="8" class="number">8</button>
