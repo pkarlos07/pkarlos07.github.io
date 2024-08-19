@@ -3,8 +3,8 @@ let num2 = "";
 let op = "";
 let temp = "";
 let result = 0;
-let maxInt = 99999999;
 let maxFloatDigits = 8;
+let maxInt = Math.pow(10, 8)
 
 const numButtons = document.querySelectorAll(".number");
 const opButtons = document.querySelectorAll(".operator");
@@ -61,7 +61,7 @@ function calculate(x, y, z) {
         text.textContent = result.toString().substring(0, maxFloatDigits);
     else
         text.textContent = result;
-    if (parseFloat(result) > maxInt || parseFloat(result) < -maxInt)
+    if (parseFloat(result) >= maxInt - 1 || parseFloat(result) <= -maxInt + 1)
         handleError(true);
     num1 = result.toString();
     temp = num2;
@@ -127,7 +127,7 @@ function clearOpButtonStyle() {
 }
 
 function handleNegative() {
-    if (op === "" || parseFloat(num1) === Math.abs(parseFloat(result))) {
+    if (op === "" || parseFloat(result) === Math.abs(parseFloat(num1))) {
         if (num1.includes("-"))
             num1 = num1.replace("-", "");
         else
