@@ -1,7 +1,8 @@
 let num1 = "";
 let num2 = "";
 let op = "";
-let temp;
+let temp = "";
+let result = 0;
 let maxInt = 99999999;
 let maxFloatDigits = 8;
 
@@ -37,12 +38,13 @@ percentButton.addEventListener("click", function() {
 });
 
 function calculate(x, y, z) {
-    let result = 0;
-    if (num2 === "") {
+    if (num2 === "" && temp !== "") {
         y = parseFloat(temp);
         num2 = temp;
     }
-    if (z === "+") 
+    if (op === "" && num2 === "")
+        result = num1;
+    else if (z === "+") 
         result = x + y
     else if (z === "-")
         result = x - y;
@@ -55,19 +57,15 @@ function calculate(x, y, z) {
         }
         result = x / y;
     }
-    else if (op === "" && num === "")
-        result = num1;
-    else
-        handleError();
     if (result.toString().length >= maxFloatDigits)
         text.textContent = result.toString().substring(0, maxFloatDigits);
     else
         text.textContent = result;
-    num1 = result;
+    if (parseFloat(result) > maxInt || parseFloat(result) < -maxInt)
+        handleError(true);
+    num1 = result.toString();
     temp = num2;
     num2 = "";
-    if (parseFloat(result) > maxInt)
-        handleError(true);
 }
 
 function addVariables(str) {
@@ -83,7 +81,7 @@ function addVariables(str) {
         num2 += str;
         text.textContent = num2;
     }
-    if (text.textContent.length >= 8)
+    if (text.textContent.length >= maxFloatDigits)
         handleError(true);
 }
 
@@ -100,11 +98,18 @@ function addOperator(e) {
 }
 
 function clear() {
-    num1 = "";
-    num2 = "";
-    op = "";
-    text.textContent = "0";
-    clearOpButtonStyle();
+    if (num1 !== "" && num2 !== "") {
+        num2 = "";
+        text.textContent = num2;
+    }
+    else {
+        num1 = "";
+        num2 = "";
+        op = "";
+        temp = "";
+        text.textContent = "0";
+        clearOpButtonStyle();
+    }
 }
 
 function handleError(x) {
@@ -122,29 +127,19 @@ function clearOpButtonStyle() {
 }
 
 function handleNegative() {
-    if (op === "") {
-        if (num1 === "") {
-            num1 += "-";
-            text.textContent = "-"
-        }
-        else if (num1 === "-") {
-            num1 = "";
-            text.textContent = ""
-        }
+    if (op === "" || parseFloat(num1) === Math.abs(parseFloat(result))) {
+        if (num1.includes("-"))
+            num1 = num1.replace("-", "");
         else
-            handleError();
+            num1 = "-" + num1;
+        text.textContent = num1;
     }
     else {
-        if (num2 === "") {
-            num2 += "-";
-            text.textContent = "-"
-        }
-        else if (num2 === "-") {
-            num2 = "";
-            text.textContent = ""
-        }
+        if (num2.includes("-"))
+            num2 = num2.replace("-", "");
         else
-            handleError();
+            num2 = "-" + num2;
+        text.textContent = num2;
     }
 }
 
