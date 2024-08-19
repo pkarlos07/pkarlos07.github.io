@@ -94,7 +94,7 @@ input {
     margin-bottom: 5px;
     background: none;
     cursor: pointer;
-    border: none;
+    border: solid white;
 }
 @media (max-width: 550px) {
     button {
