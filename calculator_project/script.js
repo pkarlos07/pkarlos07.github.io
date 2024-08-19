@@ -52,8 +52,8 @@ function calculate(x, y, z) {
         result = num1;
     else
         handleError();
-    if (result.toString().length >= 10)
-        text.textContent = result.toString().substring(0, 10);
+    if (result.toString().length >= 8)
+        text.textContent = result.toString().substring(0, 8);
     else
         text.textContent = result;
     num1 = result;
